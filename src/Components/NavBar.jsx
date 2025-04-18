@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
   return (
@@ -9,17 +10,13 @@ const NavBar = () => {
             BEULAH SPRINGS OF JOY
           </span>
           <div className="hidden md:flex space-x-6">
-            <a href="#" className="text-white hover:text-blue-200">Home</a>
-            <a href="#" className="text-white hover:text-blue-200">About</a>
-            <a href="#" className="text-white hover:text-blue-200">Ministries</a>
-            <a href="#" className="text-white hover:text-blue-200">Events</a>
-            <a href="#" className="text-white hover:text-blue-200">Contact</a>
+            <Link to="/" className="text-white hover:text-gray-200">Home</Link>
+            <Link to="/about" className="text-white hover:text-gray-200">About Us</Link>
+            <Link to="/Prayers" className="text-white hover:text-gray-200">Prayers</Link>
+            <Link to="/events" className="text-white hover:text-gray-200">Events</Link>
+            <Link to="/contact" className="text-white hover:text-gray-200">Contact</Link>
+          <Link to="/Location" className="text-white hover:text-gray-200"> location</Link>
           </div>
-          <button className="md:hidden text-white">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
         </div>
       </div>
     </nav>

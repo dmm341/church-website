@@ -7,12 +7,12 @@ import Footer from '../Footer'
 const Home = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <NavBar />
+      
       <main className="flex-grow">
         <Hero />
         <Body />
       </main>
-      <Footer />
+      
     </div>
   )
 }
