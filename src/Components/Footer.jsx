@@ -110,15 +110,22 @@ const Footer = () => {
               <div className="flex items-center">
                 <FaClock className="mr-3 text-blue-400" />
                 <div>
-                  <p className="font-medium text-white">Bible Study</p>
-                  <p className="text-gray-400">Wednesday 5:00 PM - 7:00 PM</p>
+                  <p className="font-medium text-white">prayer Day</p>
+                  <p className="text-gray-400">teusday 5:00 PM - 6:30 PM</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <FaClock className="mr-3 text-blue-400" />
                 <div>
-                  <p className="font-medium text-white">Prayer Meeting</p>
-                  <p className="text-gray-400">Friday 6:00 PM - 8:00 PM</p>
+                  <p className="font-medium text-white"> women prayer Day</p>
+                  <p className="text-gray-400">Wednesday 8:00 Am - 10:00 AM</p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <FaClock className="mr-3 text-blue-400" />
+                <div>
+                  <p className="font-medium text-white">Prayer and fasting</p>
+                  <p className="text-gray-400">thursday 5:00 PM - 6:30 PM</p>
                 </div>
               </div>
             </div>

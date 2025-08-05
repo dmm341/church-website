@@ -96,12 +96,13 @@ const Location = () => {
                         <span>9:00 AM - 12:00 PM</span>
                       </li>
                       <li className="flex justify-between">
-                        <span>Bible Study</span>
-                        <span>Wednesday 5:00 PM - 7:00 PM</span>
+                        <span>women prayer</span>
+                        <span>Wednesday 8:00 AM - 10:00 AM</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Prayer Meeting</span>
-                        <span>Friday 6:00 PM - 8:00 PM</span>
+                        <span className=" font-bold text-blue-600">TEUSDAY  5:30 PM - 7:00 PM</span>
+
                       </li>
                     </ul>
                   </div>

@@ -111,7 +111,7 @@ const AboutUs = () => {
                   alt="PASTOR SARAH MWAURA"
                   className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-500 mb-4"
                 />
-                <h3 className="text-xl font-bold">PASTOR SARAH MWAURA</h3>
+                <h3 className="text-xl font-bold">REV SARAH MWAURA</h3>
                 <p className="text-blue-600 font-medium">Women's Ministry</p>
                 <p className="text-gray-600 mt-2">
                   Leads our women's fellowship and Children ministry.
