@@ -88,24 +88,24 @@ const Location = () => {
                     </div>
                   </div>
 
-                  <div className="pt-4">
-                    <h3 className="font-semibold text-gray-800 mb-2">Service Times</h3>
-                    <ul className="space-y-2 text-gray-600">
-                      <li className="flex justify-between">
-                        <span>Sunday Worship</span>
-                        <span>9:00 AM - 12:00 PM</span>
-                      </li>
-                      <li className="flex justify-between">
-                        <span>women prayer</span>
-                        <span>Wednesday 8:00 AM - 10:00 AM</span>
-                      </li>
-                      <li className="flex justify-between">
-                        <span>Prayer Meeting</span>
-                        <span className=" font-bold text-blue-600">TEUSDAY  5:30 PM - 7:00 PM</span>
+                  <div className="pt-4 px-4">
+  <h3 className="font-semibold text-gray-800 mb-3 text-lg">Service Times</h3>
+  <ul className="space-y-3 text-gray-700 text-sm">
+    <li className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+      <span className="font-medium">Sunday Worship</span>
+      <span className="text-gray-600">9:00 AM - 12:00 PM</span>
+    </li>
+    <li className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+      <span className="font-medium">Women Prayer</span>
+      <span className="text-gray-600">Wednesday 8:00 AM - 10:00 AM</span>
+    </li>
+    <li className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+      <span className="font-medium">Prayer Meeting</span>
+      <span className="font-bold text-blue-600">Tuesday 5:30 PM - 7:00 PM</span>
+    </li>
+  </ul>
+</div>
 
-                      </li>
-                    </ul>
-                  </div>
                 </div>
               </div>
             </div>
