@@ -16,7 +16,7 @@ const FloatingImages = () => {
         className="flex space-x-8"
         animate={{ x: ["0%", "-100%"] }}
         transition={{
-          duration: 50, // speed of one full scroll
+          duration: 30, // speed of one full scroll
           repeat: Infinity,
           ease: "linear",
         }}
