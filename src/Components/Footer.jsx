@@ -26,19 +26,19 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               {[
-                { icon: <FaFacebook size={20} />, url: "https://facebook.com/yourpage" },
-                { icon: <FaInstagram size={20} />, url: "https://instagram.com/yourpage" },
-                { icon: <FaTiktok size={20} />, url: "https://tiktok.com/@yourpage" },
-                { icon: <FaWhatsapp size={20} />, url: "https://wa.me/1234567890" },
-                { icon: <FaYoutube size={20} />, url: "https://youtube.com/yourchannel" }
+                { name: "Facebook", icon: <FaFacebook size={20} />, url: "https://facebook.com/yourpage" },
+                { name: "Instagram", icon: <FaInstagram size={20} />, url: "https://instagram.com/yourpage" },
+                { name: "TikTok", icon: <FaTiktok size={20} />, url: "https://tiktok.com/@yourpage" },
+                { name: "WhatsApp", icon: <FaWhatsapp size={20} />, url: "https://wa.me/1234567890" },
+                { name: "YouTube", icon: <FaYoutube size={20} />, url: "https://youtube.com/yourchannel" }
               ].map((social, index) => (
-                <a 
+                <a
                   key={index}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors duration-300"
-                  aria-label={`${social.icon.type.name} link`}
+                  aria-label={`${social.name} link`}
                 >
                   {social.icon}
                 </a>
@@ -110,22 +110,22 @@ const Footer = () => {
               <div className="flex items-center">
                 <FaClock className="mr-3 text-blue-400" />
                 <div>
-                  <p className="font-medium text-white">prayer Day</p>
-                  <p className="text-gray-400">teusday 5:00 PM - 6:30 PM</p>
+                  <p className="font-medium text-white">Prayer Day</p>
+                  <p className="text-gray-400">Tuesday 5:00 PM - 6:30 PM</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <FaClock className="mr-3 text-blue-400" />
                 <div>
-                  <p className="font-medium text-white"> women prayer Day</p>
-                  <p className="text-gray-400">Wednesday 8:00 Am - 10:00 AM</p>
+                  <p className="font-medium text-white">Women's Prayer Day</p>
+                  <p className="text-gray-400">Wednesday 8:00 AM - 10:00 AM</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <FaClock className="mr-3 text-blue-400" />
                 <div>
-                  <p className="font-medium text-white">Prayer and fasting</p>
-                  <p className="text-gray-400">thursday 5:00 PM - 6:30 PM</p>
+                  <p className="font-medium text-white">Prayer and Fasting</p>
+                  <p className="text-gray-400">Thursday 5:00 PM - 6:30 PM</p>
                 </div>
               </div>
             </div>

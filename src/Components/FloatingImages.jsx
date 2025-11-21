@@ -26,8 +26,8 @@ const FloatingImages = () => {
           <img
             key={index}
             src={src}
-            alt={`Slide ${index}`}
-            className="w-100 h-80 object-cover rounded-xl shadow-lg"
+            alt={`Slide ${index + 1}`}
+            className="min-w-[400px] h-80 object-cover rounded-xl shadow-lg flex-shrink-0"
           />
         ))}
       </motion.div>

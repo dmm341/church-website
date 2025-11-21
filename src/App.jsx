@@ -5,6 +5,8 @@ import Contact from "./Components/pages/Contact";
 import Events from "./Components/pages/Events";
 import Location from "./Components/pages/location";
 import Prayers from "./Components/pages/Prayers";
+import Ministries from "./Components/pages/Ministries";
+import MinistryDetail from "./Components/pages/MinistryDetail";
 import MainLayout from "./Components/Layouts/MainLayout";
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" element={<MainLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
+  <Route path="/ministries" element={<Ministries />} />
+    <Route path="/ministries/:slug" element={<MinistryDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/events" element={<Events />} />
         <Route path="/location" element={<Location />} />

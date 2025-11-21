@@ -17,6 +17,7 @@ const NavBar = () => {
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-white hover:text-gray-200">Home</Link>
             <Link to="/about" className="text-white hover:text-gray-200">About Us</Link>
+            <Link to="/ministries" className="text-white hover:text-gray-200">Ministries</Link>
             <Link to="/prayers" className="text-white hover:text-gray-200">Prayers</Link>
             <Link to="/events" className="text-white hover:text-gray-200">Events</Link>
             <Link to="/contact" className="text-white hover:text-gray-200">Contact</Link>
@@ -37,6 +38,7 @@ const NavBar = () => {
           <div className="md:hidden bg-blue-600 px-4 py-2 space-y-2">
             <Link to="/" className="block text-white hover:bg-blue-500 px-2 py-1 rounded">Home</Link>
             <Link to="/about" className="block text-white hover:bg-blue-500 px-2 py-1 rounded">About Us</Link>
+            <Link to="/ministries" className="block text-white hover:bg-blue-500 px-2 py-1 rounded">Ministries</Link>
             <Link to="/prayers" className="block text-white hover:bg-blue-500 px-2 py-1 rounded">Prayers</Link>
             <Link to="/events" className="block text-white hover:bg-blue-500 px-2 py-1 rounded">Events</Link>
             <Link to="/contact" className="block text-white hover:bg-blue-500 px-2 py-1 rounded">Contact</Link>
