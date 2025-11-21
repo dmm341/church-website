@@ -53,6 +53,7 @@ const Footer = () => {
               {[
                 { name: "Home", path: "/" },
                 { name: "About Us", path: "/about" },
+                { name: "Ministries", path: "/ministries" },
                 { name: "Prayers", path: "/prayers" },
                 { name: "Events", path: "/events" },
                 { name: "Contact", path: "/contact" },
