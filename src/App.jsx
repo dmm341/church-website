@@ -7,6 +7,7 @@ import Location from "./Components/pages/location";
 import Prayers from "./Components/pages/Prayers";
 import Ministries from "./Components/pages/Ministries";
 import MinistryDetail from "./Components/pages/MinistryDetail";
+import EventDetail from "./Components/pages/EventDetail";
 import MainLayout from "./Components/Layouts/MainLayout";
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     <Route path="/ministries/:slug" element={<MinistryDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/events/:id" element={<EventDetail />} />
         <Route path="/location" element={<Location />} />
         <Route path="/prayers" element={<Prayers />} />
         </Route>

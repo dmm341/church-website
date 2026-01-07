@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import ministries from '../../data/ministries'
+import churchImg from '../../assets/church.jpg'
+import davidImg from '../../assets/david.jpg'
+import sarahImg from '../../assets/sarah.jpg'
+import youthImg from '../../assets/youth.jpg'
+import reactImg from '../../assets/react.svg'
 
 const Ministries = () => {
   return (
@@ -19,16 +24,30 @@ const Ministries = () => {
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">What we do</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              {ministries.map((m) => (
-                <Link
-                  key={m.slug}
-                  to={`/ministries/${m.slug}`}
-                  className="block bg-white p-6 rounded shadow text-center hover:shadow-lg transition"
-                >
-                  <h3 className="font-semibold text-blue-600 mb-2">{m.title}</h3>
-                  <p className="text-gray-600 text-sm">{m.description}</p>
-                </Link>
-              ))}
+              {ministries.map((m) => {
+                const images = {
+                  'church.jpg': churchImg,
+                  'david.jpg': davidImg,
+                  'sarah.jpg': sarahImg,
+                  'youth.jpg': youthImg,
+                  'react.svg': reactImg,
+                }
+                const imgSrc = images[m.image] || churchImg
+
+                return (
+                  <Link
+                    key={m.slug}
+                    to={`/ministries/${m.slug}`}
+                    className="block bg-white p-4 rounded shadow hover:shadow-lg transition"
+                  >
+                    <div className="w-full h-44 md:h-40 overflow-hidden rounded mb-4">
+                      <img src={imgSrc} alt={`${m.title} image`} className="w-full h-full object-cover" style={{ objectPosition: m.imagePosition || 'center' }} />
+                    </div>
+                    <h3 className="font-semibold text-blue-600 mb-2">{m.title}</h3>
+                    <p className="text-gray-600 text-sm">{m.description}</p>
+                  </Link>
+                )
+              })}
             </div>
           </section>
 

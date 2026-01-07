@@ -1,43 +1,10 @@
 import React from 'react'
-import NavBar from '../NavBar'
-import Footer from '../Footer'
-
+import { Link } from 'react-router-dom'
+import upcomingEvents from '../../data/events'
 const Events = () => {
-  // Sample events data - replace with your actual events
-  const upcomingEvents = [
-    {
-      id: 1,
-      title: "Sunday Worship Service",
-      date: "Every Sunday",
-      time: "9:00 AM - 12:00 PM",
-      location: "Main Sanctuary",
-      description: "Join us for uplifting worship and the Word of God"
-    },
-    {
-      id: 2,
-      title: "Bible Study Fellowship",
-      date: "Every Wednesday",
-      time: "5:00 PM - 7:00 PM",
-      location: "Fellowship Hall",
-      description: "Mid-week Bible study for spiritual growth"
-    },
-    {
-      id: 3,
-      title: "Youth Camp Retreat",
-      date: "June 15-18, 2023",
-      time: "All Day",
-      location: "Mount Kenya Retreat Center",
-      description: "Annual youth camp with worship, teaching, and outdoor activities"
-    },
-    {
-      id: 4,
-      title: "Women's Conference",
-      date: "July 22, 2023",
-      time: "8:00 AM - 4:00 PM",
-      location: "Church Grounds",
-      description: "A day of empowerment and fellowship for women of all ages"
-    }
-  ]
+  // Events data imported from src/data/events.js
+
+
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -84,9 +51,19 @@ const Events = () => {
                     
                     <p className="text-gray-700 mt-3">{event.description}</p>
                     
-                    <button className="mt-4 bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded transition">
-                      Learn More
-                    </button>
+                    <div className="mt-4">
+                      <Link
+                        to={`/events/${event.id}`}
+                        className="flex items-center justify-center bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded transition focus:outline-none focus:ring-2 focus:ring-purple-300"
+                        aria-label={`Learn more about ${event.title}`}
+                        title={`Learn more about ${event.title}`}
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"></path>
+                        </svg>
+                        <span className="ml-2">Learn More</span>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
