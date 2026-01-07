@@ -43,7 +43,7 @@ const AboutUs = () => {
             </div>
           </section>
 
-          {/* Mission Section */}
+          {/* Mission Section test*/}
           <section className="mb-16 bg-blue-50 p-8 rounded-lg">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Mission</h2>
             <div className="max-w-4xl mx-auto">
