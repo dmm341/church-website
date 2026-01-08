@@ -13,7 +13,7 @@ const NavBar = () => {
             BEULAH SPRINGS OF JOY
           </span>
           
-          {/* Desktop Menu */}
+          {/* Desktop Menu- */}
           <div className="hidden md:flex space-x-6">
             <Link to="/" className="text-white hover:text-gray-200">Home</Link>
             <Link to="/about" className="text-white hover:text-gray-200">About Us</Link>
