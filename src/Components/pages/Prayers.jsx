@@ -1,27 +1,51 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import { useState } from 'react'
 
 
 const Prayers = () => {
+  const [showSupport, setShowSupport] = useState(false)
+  const [sending, setSending] = useState(false)
+
+  // Read IDs from environment variables (Vite uses VITE_ prefix)
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_nxr1cqn'
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_rts0ul7'
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'GjuPqJxEEWU3HMuHW'
+
+  useEffect(() => {
+    if (PUBLIC_KEY) {
+      try {
+        emailjs.init(PUBLIC_KEY)
+      } catch (err) {
+        console.warn('EmailJS init error:', err)
+      }
+    } else {
+      console.warn('No EmailJS public key set (VITE_EMAILJS_PUBLIC_KEY)')
+    }
+  }, [])
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    setSending(true)
 
-    emailjs.sendForm(
-      'service_2k1ujxf',      // Replace this
-      'template_rts0ul7',     // Replace this
-      e.target,
-      'GjuPqJxEEWU3HMuHW'       // Replace this
-    )
-    .then(() => {
-      alert('Prayer sent successfully!')
-      e.target.reset()
-    })
-    .catch((error) => {
-      alert('Error sending prayer: ' + error.text)
-    })
+    // Debug: log form entries to console so you can verify template variables
+    const fd = new FormData(e.target)
+    for (const [k, v] of fd.entries()) {
+      console.log('form', k, v)
+    }
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+      .then((result) => {
+        console.log('EmailJS result:', result)
+        alert('Prayer sent successfully!')
+        e.target.reset()
+      })
+      .catch((error) => {
+        console.error('EmailJS error:', error)
+        const msg = error?.text || error?.status || JSON.stringify(error)
+        alert('Error sending prayer: ' + msg)
+      })
+      .finally(() => setSending(false))
   }
-  const [showSupport, setShowSupport] = useState(false)
 
 
   return (
@@ -62,6 +86,16 @@ const Prayers = () => {
               </div>
 
               <div className="mb-4">
+                <label className="block text-gray-700 mb-2" htmlFor="email">Your Email (optional)</label>
+                <input
+                  type="email"
+                  name="reply_to"
+                  id="email"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+
+              <div className="mb-4">
                 <label className="block text-gray-700 mb-2" htmlFor="request">Prayer Request *</label>
                 <textarea
                   name="request"
@@ -74,9 +108,10 @@ const Prayers = () => {
 
               <button
                 type="submit"
-                className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg transition"
+                disabled={sending}
+                className={`bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg transition ${sending ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
-                Submit
+                {sending ? 'Sending...' : 'Submit'}
               </button>
             </form>
           </div>
