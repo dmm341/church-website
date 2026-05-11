@@ -4,9 +4,9 @@ import upcomingEvents, { annualEvents } from '../../data/events'
 const Events = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
+      <main className="flex-grow pt-10">
         {/* Events Header */}
-        <div className="bg-blue-600 py-12 text-white">
+        <div className="bg- py-12 text-white">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold mb-4">Upcoming Events</h1>
             <p className="text-xl">
@@ -24,21 +24,21 @@ const Events = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-start mb-2">
                     <h2 className="text-2xl font-bold text-gray-800">{event.title}</h2>
-                    <span className="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">
+                    <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
                       {event.date}
                     </span>
                   </div>
                   
                   <div className="space-y-3 mt-4">
                     <div className="flex items-center">
-                      <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                       </svg>
                       <span className="text-gray-600">{event.time}</span>
                     </div>
                     
                     <div className="flex items-center">
-                      <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                       </svg>
@@ -50,7 +50,7 @@ const Events = () => {
                     <div className="mt-4">
                       <Link
                         to={`/events/${event.id}`}
-                        className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded transition focus:outline-none focus:ring-2 focus:ring-blue-300"
+                        className="flex items-center justify-center bg-purple-500 hover:bg-purple-600 text-white font-medium py-2 px-4 rounded transition focus:outline-none focus:ring-2 focus:ring-purple-300"
                         aria-label={`Learn more about ${event.title}`}
                         title={`Learn more about ${event.title}`}
                       >
@@ -81,7 +81,7 @@ const Events = () => {
               {annualEvents.map((event) => (
                 <div key={event.title} className="bg-white p-6 rounded-lg shadow-md text-center">
                   <h3 className="text-xl font-semibold text-gray-800">{event.title}</h3>
-                  <p className="text-blue-600 font-medium mt-2">{event.month}</p>
+                  <p className="text-purple-500 font-medium mt-2">{event.month}</p>
                 </div>
               ))}
             </div>
