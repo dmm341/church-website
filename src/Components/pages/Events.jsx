@@ -14,7 +14,6 @@ const Events = () => {
             </p>
           </div>
         </div>
-
         {/* Events Content */}
         <div className="container mx-auto px-4 py-12">
           {/* Events List */}
@@ -88,9 +87,7 @@ const Events = () => {
           </div>
         </div>
       </main>
-      
     </div>
   )
 }
-
 export default Events
