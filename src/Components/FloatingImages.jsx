@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 // Import images from your assets folder
 import pic1 from "../assets/church.jpg";
@@ -12,7 +12,7 @@ const images = [pic1, pic2, pic3, pic4];
 const FloatingImages = () => {
   return (
     <div className="relative w-full overflow-hidden bg-gray-50 py-10">
-      <motion.div
+      <Motion.div
         className="flex space-x-8"
         animate={{ x: ["0%", "-100%"] }}
         transition={{
@@ -30,7 +30,7 @@ const FloatingImages = () => {
             className="min-w-[400px] h-80 object-cover rounded-xl shadow-lg flex-shrink-0"
           />
         ))}
-      </motion.div>
+      </Motion.div>
     </div>
   );
 };

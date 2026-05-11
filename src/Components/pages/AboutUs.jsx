@@ -7,7 +7,7 @@ import Church from '../../assets/church.jpg'
 const AboutUs = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow pt-10">
+      <main className="flex-grow">
         {/* Hero Section */}
         <div className="bg-blue-600 py-12 text-white">
           <div className="container mx-auto px-4 text-center">
@@ -66,7 +66,7 @@ const AboutUs = () => {
           </section>
 
           {/* Vision Section */}
-          <section className="mb-16 bg-purple-50 p-8 rounded-lg">
+          <section className="mb-16 bg-blue-50 p-8 rounded-lg">
             <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Our Vision</h2>
             <div className="max-w-4xl mx-auto">
               <p className="text-gray-700 text-lg text-center">
@@ -79,7 +79,7 @@ const AboutUs = () => {
                   "Transformed lives through Christ"
                 ].map((item, index) => (
                   <div key={index} className="bg-white p-4 rounded shadow text-center">
-                    <p className="font-semibold text-purple-600">{item}</p>
+                    <p className="font-semibold text-blue-600">{item}</p>
                   </div>
                 ))}
               </div>
@@ -95,7 +95,7 @@ const AboutUs = () => {
                 <img 
                   src={PastorJohn} 
                   alt="BISHOP DAVID MWAURA"
-                  className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-500 mb-4"
+                  className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-600 mb-4"
                 />
                 <h3 className="text-xl font-bold">BISHOP DAVID MWAURA</h3>
                 <p className="text-blue-600 font-medium">SENIOR BISHOP</p>
@@ -109,7 +109,7 @@ const AboutUs = () => {
                 <img 
                   src={ElderGrace} 
                   alt="PASTOR SARAH MWAURA"
-                  className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-500 mb-4"
+                  className="w-48 h-48 mx-auto rounded-full object-cover border-4 border-blue-600 mb-4"
                 />
                 <h3 className="text-xl font-bold">REV SARAH MWAURA</h3>
                 <p className="text-blue-600 font-medium">Women's Ministry</p>

@@ -4,7 +4,7 @@ import heroBg from "../assets/church.jpg";
 const Hero = () => {
   return (
     <div
-      className="relative bg-gradient-to-r from-purple-700 via-purple-600 to-purple-800 py-16 md:py-20 text-white overflow-hidden"
+      className="relative bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 py-16 md:py-20 text-white overflow-hidden"
       style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
     >
       {/* decorative overlay to mimic previous opacity */}
@@ -17,7 +17,7 @@ const Hero = () => {
         <p className="text-base md:text-lg mb-5 opacity-90">A place where everybody is somebody</p>
         <a
           href="/contact"
-          className="bg-white text-purple-700 font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg hover:bg-purple-100 transition-transform transform hover:scale-105"
+          className="bg-white text-blue-700 font-semibold py-2 px-6 rounded-full shadow hover:shadow-lg hover:bg-blue-100 transition-transform transform hover:scale-105"
         >
           Join Us
         </a>

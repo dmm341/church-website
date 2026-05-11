@@ -21,17 +21,11 @@ const Prayers = () => {
     } else {
       console.warn('No EmailJS public key set (VITE_EMAILJS_PUBLIC_KEY)')
     }
-  }, [])
+  }, [PUBLIC_KEY])
 
   const handleSubmit = (e) => {
     e.preventDefault()
     setSending(true)
-
-    // Debug: log form entries to console so you can verify template variables
-    const fd = new FormData(e.target)
-    for (const [k, v] of fd.entries()) {
-      console.log('form', k, v)
-    }
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
       .then((result) => {
@@ -50,9 +44,9 @@ const Prayers = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow pt-10">
+      <main className="flex-grow">
         {/* Header and other content */}
-        <div className="bg-purple-500 py-12 text-white">
+        <div className="bg-blue-600 py-12 text-white">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold mb-4">Prayer Requests</h1>
             <p className="text-xl">
@@ -71,7 +65,7 @@ const Prayers = () => {
                   type="text"
                   name="name"
                   id="name"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
               </div>
 
@@ -81,7 +75,7 @@ const Prayers = () => {
                   type="tel"
                   name="phone"
                   id="phone"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
               </div>
 
@@ -91,7 +85,7 @@ const Prayers = () => {
                   type="email"
                   name="reply_to"
                   id="email"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                 />
               </div>
 
@@ -102,14 +96,14 @@ const Prayers = () => {
                   id="request"
                   rows="4"
                   required
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={sending}
-                className={`bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg transition ${sending ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition ${sending ? 'opacity-70 cursor-not-allowed' : ''}`}
               >
                 {sending ? 'Sending...' : 'Submit'}
               </button>
@@ -156,10 +150,10 @@ const Prayers = () => {
         <a
           key={phone}
           href={`tel:+${phone}`}
-          className="block bg-purple-100 hover:bg-purple-200 border border-purple-400 p-4 rounded-lg shadow text-left transition"
+          className="block bg-blue-100 hover:bg-blue-200 border border-blue-300 p-4 rounded-lg shadow text-left transition"
         >
-          <h3 className="font-bold text-lg text-purple-800">Call {name}</h3>
-          <p className="text-sm text-purple-700">{phone}</p>
+          <h3 className="font-bold text-lg text-blue-800">Call {name}</h3>
+          <p className="text-sm text-blue-700">{phone}</p>
         </a>
       ))}
     </div>

@@ -1,11 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ministries from '../../data/ministries'
-import churchImg from '../../assets/church.jpg'
-import davidImg from '../../assets/david.jpg'
-import sarahImg from '../../assets/sarah.jpg'
-import youthImg from '../../assets/youth.jpg'
-import reactImg from '../../assets/react.svg'
+import { getMinistryImage } from '../../data/ministryImages'
 
 const MinistryDetail = () => {
   const { slug } = useParams()
@@ -24,20 +20,11 @@ const MinistryDetail = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow pt-10">
+      <main className="flex-grow">
         <div className="bg-blue-600 py-12 text-white">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-4xl mx-auto mb-6 overflow-hidden rounded">
-              <img src={(function(){
-                const images = {
-                  'church.jpg': churchImg,
-                  'david.jpg': davidImg,
-                  'sarah.jpg': sarahImg,
-                  'youth.jpg': youthImg,
-                  'react.svg': reactImg,
-                }
-                return images[ministry.image] || churchImg
-              })()} alt={`${ministry.title} image`} className="w-full h-64 object-cover" style={{ objectPosition: ministry.imagePosition || 'center' }} />
+              <img src={getMinistryImage(ministry.image)} alt={`${ministry.title} image`} className="w-full h-64 object-cover" style={{ objectPosition: ministry.imagePosition || 'center' }} />
             </div>
             <h1 className="text-4xl font-bold mb-2">{ministry.title}</h1>
             <p className="max-w-2xl mx-auto">{ministry.description}</p>

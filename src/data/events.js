@@ -33,4 +33,19 @@ const upcomingEvents = [
   }
 ]
 
+export const annualEvents = [
+  {
+    title: "Easter Celebration",
+    month: "April"
+  },
+  {
+    title: "Harvest Festival",
+    month: "August"
+  },
+  {
+    title: "Christmas Program",
+    month: "December"
+  }
+]
+
 export default upcomingEvents
