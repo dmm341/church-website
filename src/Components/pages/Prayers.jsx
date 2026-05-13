@@ -1,50 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import emailjs from '@emailjs/browser'
+import React, { useState } from 'react'
 
 
 const Prayers = () => {
   const [showSupport, setShowSupport] = useState(false)
-  const [sending, setSending] = useState(false)
-
-  // Read IDs from environment variables (Vite uses VITE_ prefix)
-  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_nxr1cqn'
-  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_rts0ul7'
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'GjuPqJxEEWU3HMuHW'
-
-  useEffect(() => {
-    if (PUBLIC_KEY) {
-      try {
-        emailjs.init(PUBLIC_KEY)
-      } catch (err) {
-        console.warn('EmailJS init error:', err)
-      }
-    } else {
-      console.warn('No EmailJS public key set (VITE_EMAILJS_PUBLIC_KEY)')
-    }
-  }, [PUBLIC_KEY])
+  const prayerWhatsappNumber = import.meta.env.VITE_PRAYER_WHATSAPP_NUMBER || '254719620443'
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setSending(true)
 
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
-      .then((result) => {
-        console.log('EmailJS result:', result)
-        alert('Prayer sent successfully!')
-        e.target.reset()
-      })
-      .catch((error) => {
-        console.error('EmailJS error:', error)
-        const msg = error?.text || error?.status || JSON.stringify(error)
-        alert('Error sending prayer: ' + msg)
-      })
-      .finally(() => setSending(false))
+    const formData = new FormData(e.target)
+    const name = formData.get('name')?.trim() || 'Anonymous'
+    const phone = formData.get('phone')?.trim() || 'Not provided'
+    const email = formData.get('reply_to')?.trim() || 'Not provided'
+    const request = formData.get('request')?.trim()
+
+    const message = [
+      'Prayer Request',
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      '',
+      request,
+    ].join('\n')
+
+    window.open(
+      `https://wa.me/${prayerWhatsappNumber}?text=${encodeURIComponent(message)}`,
+      '_blank',
+      'noopener,noreferrer',
+    )
+
+    e.target.reset()
   }
 
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
+    <div className="bg-gray-50 dark:bg-gray-900">
+      <main className="bg-gray-50 dark:bg-gray-900">
         {/* Header and other content */}
         <div className="bg-blue-600 py-12 text-white">
           <div className="container mx-auto px-4 text-center">
@@ -102,10 +93,9 @@ const Prayers = () => {
 
               <button
                 type="submit"
-                disabled={sending}
-                className={`bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition ${sending ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition"
               >
-                {sending ? 'Sending...' : 'Submit'}
+                Send to WhatsApp
               </button>
             </form>
           </div>

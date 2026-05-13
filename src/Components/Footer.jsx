@@ -11,7 +11,7 @@ import {
   FaEnvelope,
   FaClock
 } from 'react-icons/fa'
-import { churchInfo, serviceTimes } from '../data/churchInfo'
+import { churchInfo } from '../data/churchInfo'
 import navLinks from '../data/navigation'
 
 const Footer = () => {
@@ -26,7 +26,7 @@ const Footer = () => {
   return (
     <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-gray-300 pt-14 pb-6">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="space-y-5">
             <h3 className="text-2xl font-bold text-white tracking-wide">
               {churchInfo.name}
@@ -108,7 +108,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold text-white mb-4 border-b border-gray-700 pb-2">
               Service Times
             </h3>
@@ -124,7 +124,7 @@ const Footer = () => {
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">

@@ -27,8 +27,8 @@ const Contact = () => {
   ]
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
+    <div className="bg-gray-50 dark:bg-gray-900">
+      <main className="bg-gray-50 dark:bg-gray-900">
         <div className="bg-blue-600 py-12 text-white">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
