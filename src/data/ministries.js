@@ -3,7 +3,7 @@ const ministries = [
   {
     slug: 'children',
     title: 'Children Ministry',
-    image: 'sarah.jpg',
+    image: 'children.jfif',
     imagePosition: '50% 25%',
     description:
       'Programs, Sunday school and activities for kids. We create a safe, fun environment where children can learn about Jesus.',
@@ -15,7 +15,7 @@ const ministries = [
   {
     slug: 'womens',
     title: "Women's Ministry",
-    image: 'sarah.jpg',
+    image: 'women.jfif',
     imagePosition: '50% 25%',
     description:
       'Fellowship, discipleship and support for women in the church. Bible studies and outreach events throughout the year.',
@@ -26,8 +26,8 @@ const ministries = [
   {
     slug: 'mens',
     title: "Men's Fellowship",
-    image: 'david.jpg',
-    imagePosition: '50% 30%',
+    image: 'mens ministry.jfif',
+    imagePosition: '30% 30%',
     description: 'Men gathering for fellowship, mentorship and community service.',
     events: [
       { id: 4, title: 'Men Breakfast', date: 'First Saturday • 8:00 AM', description: 'Breakfast and devotion for men.' },
@@ -40,31 +40,21 @@ const ministries = [
     imagePosition: '50% 20%',
     description: 'Activities, teachings and community for teenagers and young adults.',
     events: [
-      { id: 5, title: 'Youth Night', date: 'Fridays • 7:00 PM', description: 'Worship, teaching and games.' },
+      { id: 5, title: 'Youth Night', date: 'Fridays • 10:00 PM', description: 'Worship, teaching and games.' },
     ],
   },
   {
     slug: 'outreach',
     title: 'Outreach & Evangelism',
-    image: 'church.jpg',
+    image: 'envangelism.jfif',
     description: 'Community outreach programmes focused on serving local needs and sharing the Gospel.',
     events: [
-      { id: 6, title: 'Community Food Drive', date: 'Monthly', description: 'Food distribution and support to the vulnerable.' },
-    ],
-  },
-  {
-    slug: 'care',
-    title: 'Care & Counseling',
-    image: 'church.jpg',
-    description: 'Pastoral care, counseling and support groups for those in need.',
-    events: [
-      { id: 7, title: 'Counseling Clinic', date: 'By appointment', description: 'One-on-one pastoral counseling.' },
-    ],
+      ],
   },
   {
     slug: 'worship',
     title: 'Worship Team',
-    image: 'church.jpg',
+    image: 'worship.jfif',
     description: 'Music and worship leading for services and events.',
     events: [
       { id: 8, title: 'Worship Rehearsal', date: 'saturday 10:00 am to 1:00pm ', description: 'Weekly rehearsal for singers and musicians.' },
@@ -75,20 +65,10 @@ const ministries = [
   {
     slug: 'media',
     title: 'Media & Communications',
-    image: 'react.svg',
+    image: 'media.jfif',
     description: 'Handles live streaming, recordings and social media communications.',
     events: [
-      { id: 9, title: 'Live Stream Team Meeting', date: 'Monthly', description: 'Coordinate upcoming recordings and schedules.' },
-    ],
-  },
-  {
-    slug: 'hospitality',
-    title: 'Hospitality & Events',
-    image: 'church.jpg',
-    description: 'Welcoming guests and organising church events and logistics.',
-    events: [
-      { id: 10, title: 'Volunteer Day', date: 'Quarterly', description: 'Prepare for large events and train volunteers.' },
-    ],
+      ],
   },
 ]
 

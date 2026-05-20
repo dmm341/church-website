@@ -85,18 +85,18 @@ const NavBar = () => {
                 </span>
               </Link>
 
-              <div className="hidden flex-1 items-center justify-end gap-1 md:flex">
+              <div className="hidden flex-1 items-center justify-center gap-5 md:flex">
                 {rightLinks.map((link) => (
                   <NavLink key={link.path} to={link.path} className={linkClass}>
                     {link.name}
                   </NavLink>
                 ))}
-                <Link
+                {/* <Link
                   to="/contact"
                   className="ml-3 rounded-full bg-white px-9 py-4 text-lg font-bold text-blue-700 transition hover:bg-blue-50"
                 >
                   Give
-                </Link>
+                </Link> */}
               </div>
 
               <button
