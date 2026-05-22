@@ -1,11 +1,16 @@
 import React from "react";
-import heroBg from "../assets/church.jpg";
+import heroBackgroundImage from "../assets/hero.png";
 
 const Hero = () => {
   return (
     <div
-      className="relative bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 py-16 md:py-20 text-white overflow-hidden"
-      style={{ backgroundImage: `url(${heroBg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+      className="relative flex h-56 w-full items-center justify-center overflow-hidden bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 text-white sm:h-64 md:h-80 lg:h-96"
+      style={{
+        backgroundImage: `url(${heroBackgroundImage})`,
+        backgroundSize: "100% 100%",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       {/* decorative overlay to mimic previous opacity */}
       <div aria-hidden className="absolute inset-0 bg-black opacity-20" />

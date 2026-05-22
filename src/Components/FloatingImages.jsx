@@ -8,26 +8,26 @@ import pic3 from "../assets/sarah.jpg";
 import pic4 from "../assets/youth.jpg";
 
 const images = [pic1, pic2, pic3, pic4];
+const repeatedImages = [...images, ...images];
 
 const FloatingImages = () => {
   return (
     <div className="relative w-full overflow-hidden bg-gray-50 py-10">
       <Motion.div
-        className="flex space-x-8"
-        animate={{ x: ["0%", "-100%"] }}
+        className="flex w-max gap-8"
+        animate={{ x: ["0%", "-50%"] }}
         transition={{
-          duration: 30, // speed of one full scroll
+          duration: 35,
           repeat: Infinity,
           ease: "linear",
         }}
       >
-        {/* Duplicate images for smooth infinite scroll */}
-        {[...images, ...images].map((src, index) => (
+        {[...repeatedImages, ...repeatedImages].map((src, index) => (
           <img
             key={index}
             src={src}
             alt={`Slide ${index + 1}`}
-            className="min-w-[400px] h-80 object-cover rounded-xl shadow-lg flex-shrink-0"
+            className="h-80 w-[400px] flex-shrink-0 rounded-xl object-cover shadow-lg"
           />
         ))}
       </Motion.div>
